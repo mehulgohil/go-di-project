@@ -7,7 +7,7 @@ var EnvVariables EnvConfig
 type EnvConfig struct {
 	Environment                 string `env:"ENVIRONMENT" envDefault:"DEV"`
 	AppPort                     string `env:"WEBSITES_PORT" envDefault:"8080"`
-	PostgresSQLConnectionString string `env:"POSTGRES_SQL_CONNECTION_STRING"`
+	PostgresSQLConnectionString string `env:"POSTGRES_SQL_CONNECTION_STRING,required"`
 }
 
 func LoadEnvVariables() {
