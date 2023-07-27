@@ -1,0 +1,36 @@
+basePath: /
+definitions:
+  models.HealthCheckResponse:
+    properties:
+      status:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a demo application to show dependency injection in Golang
+  title: Dependency Injection Demo Project
+  version: "1.0"
+paths:
+  /healthcheck:
+    get:
+      consumes:
+      - application/json
+      description: Checks the health status of the server
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.HealthCheckResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Check server health status
+      tags:
+      - HealthCheck
+swagger: "2.0"
